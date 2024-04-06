@@ -173,9 +173,9 @@ interface IOrderResult {
 ## Модели данных 
 
 ### Класс AppState
-
+```
 class AppState extends Model<IAppState>
-
+```
 Используется для управления состоянием приложения, хранения данных и выполнения операций с ними
 
 Конструктор:
@@ -202,9 +202,9 @@ class AppState extends Model<IAppState>
 ## Компоненты представления 
 
 ### Класс Form
-
+```
 class Form<T> extends Component<IFormState>
-
+```
 Представляет собой компонент формы, расширяющий базовый Component. Обеспечивает функционал для работы с формами, включая управление состоянием, валидацию и обработку событий
 
 Конструктор:
@@ -217,9 +217,9 @@ class Form<T> extends Component<IFormState>
 - render() - рендерит состояние формы
 
 ### Класс Modal
-
+```
 class Modal extends Component<IModalData>
-
+```
 Представляет собой компонент модального окна, расширяющий базовый Component. Обеспечивает функционал для открытия, закрытия и управления содержимым модального окна
 
 Конструктор:
@@ -232,9 +232,9 @@ class Modal extends Component<IModalData>
 - render(data: IModalData) - подготавливает размётку (content) и открывает модальное окно
 
 ### Класс Page 
-
+```
 class Page extends Component<IPage>
-
+```
 Представляет собой компонент страницы, расширяющий базовый Component. Используется для управления содержимым и состоянием страницы
 
 Свойства:
@@ -252,9 +252,9 @@ class Page extends Component<IPage>
 - set locked() - управляет состоянием блокировки страницы
 
 ### Класс Card
-
+```
 class Card extends Component<ICard>
-
+```
 Представляет собой компонент для отображения и управления карточками товара, расширяющий базовый Component
 
 Свойства:
@@ -279,9 +279,9 @@ class Card extends Component<ICard>
 - set description() - устанавливает описание товара.
 
 ### Класс Basket
-
+```
 class Basket extends Component<IBasketView>
-
+```
 Представляет компонент корзины, расширяющий базовый Component. Используется для отображения и управления корзиной
 
 Свойства:
@@ -298,9 +298,9 @@ class Basket extends Component<IBasketView>
 - set total() - устанавливает полную сумму заказа в корзине
 
 ### Класс DeliveryOrderForm
-
+```
 class DeliveryOrderForm extends Form<IDeliveryOrderForm>
-
+```
 Представляет класс управления формой доставки и способа оплаты
 
 Свойства:
@@ -315,9 +315,9 @@ class DeliveryOrderForm extends Form<IDeliveryOrderForm>
 - set address() - устанавливает адрес доставки
 
 ### Класс ContactOrderForm
-
+```
 class ContactOrderForm extends Form<IContactOrderForm>
-
+```
 Представляет класс управления формой контактные данные. Наследует класс Form
 
 Конструктор:
@@ -328,9 +328,9 @@ class ContactOrderForm extends Form<IContactOrderForm>
 - set email() - устанавливает электронную почту
 
 ### Класс Success
-
+```
 class Success extends Component<ISuccess>
-
+```
 Представляет компонент успешная оплата, расширяющий базовый Component
 
 Свойства:
