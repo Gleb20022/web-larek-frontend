@@ -108,6 +108,94 @@ interface IOrderResult {
 }
 ```
 
+Интерфейс для описания данных обработчика валидности формы
+
+```TypeScript
+interface IFormState {
+  valid: boolean; //указывает является ли форма допустимой
+  errors: string[]; //массив ошибкок валидации формы
+}
+```
+
+Интерфейс для описания данных модального окна
+
+```TypeScript
+interface IModalData {
+  content: HTMLElement; //элемент отображаемый внутри модального окна
+}
+```
+
+Интерфейс для описания данных главной страницы
+
+```TypeScript
+interface IPage {
+  counter: number; //счетчик корзины
+  catalog: HTMLElement[]; //массив карточек
+}
+```
+
+Интерфейс для описания данных карточки
+
+```TypeScript
+interface ICard {
+  title?: string; //название товара
+  image?: string; //изображение товара
+  description?: string; //описание товара
+  button?: string; //кнопка действия
+}
+```
+
+Интерфейс для описания данных корзины
+
+```TypeScript
+interface IBasketView {
+  items: HTMLElement[]; //массив карточек
+  total: number; //сумма товаров
+}
+```
+
+Интерфейс для описания данных спосба оплаты и доставки
+
+```TypeScript
+interface IDeliveryOrderForm {
+  payment: string; //способ оплаты
+	address: string; //адрес доставки
+}
+```
+
+Интерфейс для описания данных контакты
+
+```TypeScript
+interface IContactOrderForm {
+  email: string; //электронная почта
+	phone: string; // номер телефона
+}
+```
+
+Интерфейс для описания данных успешного заказа
+
+```TypeScript
+interface ISuccess {
+  total: number; //сумма заказа
+}
+```
+
+Интерфейс для описания действия в конструктор карты
+
+```TypeScript
+interface ICardActions {
+  onClick: (event: MouseEvent) => void; //нажатие мыши
+}
+```
+
+Интерфейс для описания действия в конструктор успешного заказа
+
+```TypeScript
+interface ISuccessActions {
+  onClick: () => void; //любое действие
+}
+```
+
 ## Базовые классы 
 
 ### Класс API
