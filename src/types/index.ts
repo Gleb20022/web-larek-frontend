@@ -35,3 +35,51 @@ export interface IOrderResult {
 	id: string;
 	total: number;
 }
+
+export interface IFormState {
+  valid: boolean;
+  errors: string[];
+}
+
+export interface IModalData {
+  content: HTMLElement;
+}
+
+export interface IPage {
+  counter: number;
+  catalog: HTMLElement[];
+}
+
+export interface ICard {
+  title?: string;
+  image?: string;
+  description?: string;
+  button?: string;
+}
+
+export interface IBasketView {
+  items: HTMLElement[];
+  total: number;
+}
+
+export interface IDeliveryOrderForm {
+  payment: string;
+	address: string;
+}
+
+export interface IContactOrderForm {
+  email: string;
+	phone: string;
+}
+
+export interface ISuccess {
+  total: number;
+}
+
+export interface ICardActions {
+  onClick: (event: MouseEvent) => void;
+}
+
+export interface ISuccessActions {
+  onClick: () => void;
+}
