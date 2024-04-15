@@ -51,10 +51,12 @@ export interface IPage {
 }
 
 export interface ICard {
-  title?: string;
-  image?: string;
-  description?: string;
-  button?: string;
+  id: string;
+	description: string;
+	image: string;
+	title: string;
+	category: string;
+	price: number | null;
 }
 
 export interface IBasketView {
