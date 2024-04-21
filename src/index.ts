@@ -52,7 +52,13 @@ events.on('card:select', (item: IProductItem) => {
 
 events.on('preview:changed', (item: IProductItem) => {
 	const card = new Card(cloneTemplate(cardPreviewTemplate), {
-		onClick: () => events.emit('product:add', item),
+		onClick: () => {
+			events.emit('product:add', item),
+				(item.inBasket = true),
+				appData.addToBasket(item),
+				(page.counter = appData.basket.length);
+			modal.close();
+		},
 	});
 	modal.render({
 		content: card.render({
@@ -60,7 +66,38 @@ events.on('preview:changed', (item: IProductItem) => {
 			image: item.image,
 			price: item.price,
 			category: item.category,
+			inBasket: item.inBasket,
 		}),
+	});
+});
+
+events.on('basket:changed', (items: IProductItem[]) => {
+	basket.items = items.map((item, index) => {
+		const card = new Card(cloneTemplate(cardBasketTemplate), {
+			onClick: () => {
+				events.emit('product:delete', item),
+					(item.inBasket = false),
+					appData.removeFromBasket(item);
+				page.counter = appData.basket.length;
+			},
+		});
+		return card.render({
+			title: item.title,
+			price: item.price,
+			index: `${index + 1}`,
+		});
+	});
+	let total = 0;
+	items.forEach((item) => {
+		total += item.price;
+	});
+	basket.total = total;
+	appData.order.total = total;
+});
+
+events.on('basket:open', () => {
+	modal.render({
+		content: basket.render({}),
 	});
 });
 
