@@ -65,6 +65,7 @@ export class Card extends Component<ICard> {
 			this._price,
 			value ? `${value.toString()} синапсов` : 'Бесценно'
 		);
+		this._button && !value ? (this._button.disabled = true) : null;
 	}
 
 	get price(): number {
