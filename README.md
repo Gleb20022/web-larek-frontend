@@ -467,7 +467,7 @@ class DeliveryOrderForm extends Form<IDeliveryOrderForm>
 
 Конструктор:
 
-- constructor(container: HTMLFormElement, events: IEvents, actions?: ICardActions) - конструктор принимает контейнер формы доставки и способа оплаты и объект событий, используемый для управления событиями формы доставки и способа оплаты
+- constructor(container: HTMLFormElement, events: IEvents) - конструктор принимает контейнер формы доставки и способа оплаты и объект событий, используемый для управления событиями формы доставки и способа оплаты
 
 Методы:
 
@@ -546,15 +546,11 @@ class Success extends Component<ISuccess>
 
 Событие вызываемое при открытии формы способа оплаты и достваки
 
-### payment:toggle
-
-Событие вызываемое при изменении способа оплаты
-
 ### formErrors:change
 
 Событие возникающее при изменении состояния валидации формы
 
-### /^deliveryOrder\..\*:change/
+### /^order\..\*:change/
 
 Событие срабатывающее при изменении полей способа оплаты и доставки
 
@@ -562,7 +558,7 @@ class Success extends Component<ISuccess>
 
 Событие срабатывающее при готовности перехода полей способа оплаты и доставки
 
-### /^orderContacts\..\*:change/
+### /^contacts\..\*:change/
 
 Событие срабатывающее при изменении полей контактов
 
@@ -570,13 +566,13 @@ class Success extends Component<ISuccess>
 
 Событие срабатывающее при готовности перехода полей контактов
 
-### deliveryOrder:submit
-
-Событие перехода к форме полей полей способа оплаты и доставки
-
-### contactOrder:submit
+### order:submit
 
 Событие перехода к форме полей полей контактов
+
+### contacts:submit
+
+Событие перехода к форме полей полей успешная оплата
 
 ### modal:open
 
