@@ -85,6 +85,7 @@ events.on('preview:changed', (item: IProductItem) => {
 			image: item.image,
 			price: item.price,
 			category: item.category,
+			description: item.description,
 			inBasket: item.inBasket,
 		}),
 	});
@@ -191,11 +192,13 @@ events.on('contacts:submit', () => {
 		.then((res) => {
 			const success = new Success(cloneTemplate(successTemplate), {
 				onClick: () => {
-					appData.clearBasket();
-					page.counter = appData.basket.length;
 					modal.close();
 				},
 			});
+			appData.resetFormData();
+			appData.clearBasket();
+			appData.resetBasketState();
+			page.counter = appData.basket.length;
 			success.result = res.total.toString();
 			modal.render({
 				content: success.render({}),

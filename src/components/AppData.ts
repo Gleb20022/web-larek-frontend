@@ -96,4 +96,21 @@ export class AppState extends Model<IAppState> {
 		this.events.emit('formErrors:change', this.formErrors);
 		return Object.keys(errors).length === 0;
 	}
+
+	resetFormData() {
+		this.order = {
+			payment: '',
+			address: '',
+			email: '',
+			phone: '',
+			total: 0,
+			items: [],
+		};
+	}
+
+	resetBasketState() {
+		this.catalog.forEach((item) => {
+			item.inBasket = false;
+		});
+	}
 }
