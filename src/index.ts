@@ -16,7 +16,7 @@ import {
 import { Modal } from './components/common/Modal';
 import { Basket } from './components/Basket';
 import { DeliveryOrderForm, ContactOrderForm } from './components/Order';
-import { Success } from './components/Success';
+import { Success } from './components/common/Success';
 
 const events = new EventEmitter();
 const api = new ProductAPI(CDN_URL, API_URL);
